@@ -10,7 +10,6 @@
 <script>
   var gui = nw;
   var win;
-
   
   gui.Window.open('popup.html', {
     x: 100, y: 100, width: 200, height: 300
@@ -42,6 +41,7 @@
       win.close(true);
     this.close(true);
   }); 
+
 
   gui.Window.get().show();
 </script>
@@ -134,5 +134,7 @@ Reload the window and do all tests again.
 <button onclick="win.reload()">Reload</button>
 <br/>
 <button onclick="win.reloadIgnoringCache()">Reload ignoring cache</button>
+Reload the window and do all tests again.
+<button onclick="win.reload()">Reload</button>
 </body>
 </html>

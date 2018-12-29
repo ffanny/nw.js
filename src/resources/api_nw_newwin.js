@@ -50,17 +50,15 @@ function getPlatform() {
 }
 
 var canSetVisibleOnAllWorkspaces = /(mac|linux)/.exec(getPlatform());
-var appWinEventsMap = {
-  'minimize':         'onMinimized',
-  'maximize':         'onMaximized',
-  'restore':          'onRestored',
-  'enter-fullscreen': 'onFullscreened',
-  'closed':           'onClosed'
-};
 
 var nwWinEventsMap = {
+  'minimize':         'onMinimized',
+  'maximize':         'onMaximized',
+  'restore':          'onRestore',
+  'enter-fullscreen': 'onFullscreen',
   'zoom':             'onZoom',
-  'close':            'onClose'
+  'close':            'onClose',
+  'resize':           'onResized'
 };
 
 var nwWrapEventsMap = {
@@ -70,10 +68,10 @@ var nwWrapEventsMap = {
 };
 
 var wrapEventsMapNewWin = {
-  'resize':  'onResize',
   'move':    'onMove',
   'focus':   'onFocusChanged',
-  'blur':    'onFocusChanged'
+  'blur':    'onFocusChanged',
+  'closed':  'onRemoved'
 };
 
 nw_internal.registerCustomHook(function(bindingsAPI) {
@@ -110,6 +108,7 @@ nw_internal.registerCustomHook(function(bindingsAPI) {
 var currentNWWindowInternal = nw_internal.generate();
 
 function NWWindow(cWindow) {
+  var self = this;
   if (cWindow)
     this.cWindow = cWindow;
   else {
@@ -118,8 +117,33 @@ function NWWindow(cWindow) {
           console.error('The JavaScript context calling ' +
                         'nw.Window.get() has no associated Browser window.');
   }
+
+  function updateWindowAttributes(w) {
+    if (w.id !== self.cWindow.id)
+      return;
+    var oldState = self.cWindow.state;
+    var oldWidth = self.cWindow.width;
+    var oldHeight = self.cWindow.height;
+
+    self.cWindow.state = w.state;
+    self.cWindow.width = w.width;
+    self.cWindow.height = w.height;
+
+    if (oldState != 'minimized' && w.state == 'minimized') {
+      dispatchEventIfExists(self, 'onMinimized');
+    } else if (oldState != 'maximized' && w.state == 'maximized') {
+      dispatchEventIfExists(self, 'onMaximized');
+    } else if (oldState != 'fullscreen' && w.state == 'fullscreen') {
+      dispatchEventIfExists(self, 'onFullscreen');
+    } else if (oldState != 'normal' && w.state == 'normal') {
+      dispatchEventIfExists(self, 'onRestore');
+    } else if (oldWidth != w.width || oldHeight != w.height) {
+      dispatchEventIfExists(self, 'onResized', [w.width, w.height]);
+    }
+  }
   console.log("cWindow id: " + this.cWindow.id);
   privates(this).menu = null;
+  chrome.windows.onWindowChanged.addListener(updateWindowAttributes);
 }
 
 forEach(currentNWWindowInternal, function(key, value) {
@@ -134,6 +158,11 @@ NWWindow.prototype.onDocumentStart     = new Event("nw.Window.onDocumentStart");
 NWWindow.prototype.onDocumentEnd       = new Event("nw.Window.onDocumentEnd");
 NWWindow.prototype.onZoom              = new Event();
 NWWindow.prototype.onClose             = new Event("nw.Window.onClose", undefined, {supportsFilters: true});
+NWWindow.prototype.onMinimized         = new Event();
+NWWindow.prototype.onMaximized         = new Event();
+NWWindow.prototype.onFullscreen        = new Event();
+NWWindow.prototype.onResized           = new Event();
+NWWindow.prototype.onRestore           = new Event();
 
 NWWindow.prototype.close = function (force) {
   currentNWWindowInternal.close(force, this.cWindow.id);
@@ -192,6 +221,14 @@ NWWindow.prototype.on = function (event, callback, record) {
     });
     chrome.windows.onFocusChanged.addListener(cbf);
     break;
+  case 'closed':
+    var cbr = wrap(function(windowId) {
+      if (self.cWindow.id !== windowId)
+        return;
+      callback.call(self);
+    });
+    chrome.windows.onRemoved.addListener(cbr);
+    break;
   case 'loaded':
     var g = wrap(function(tabId, changeInfo, tab) {
       if (tab.windowId !== self.cWindow.id)
@@ -247,35 +284,14 @@ NWWindow.prototype.on = function (event, callback, record) {
     chrome.windows.onMove.addListener(k);
     return this; //return early
     break;
-  case 'resize':
-    var l = wrap(function(w) {
-      if (w.id != self.cWindow.id)
-        return;
-      callback.call(self, w.width, w.height);
-    });
-    chrome.windows.onResize.addListener(l);
-    return this; //return early
-    break;
   }
-  //if (appWinEventsMap.hasOwnProperty(event)) {
-  //  this.appWindow[appWinEventsMap[event]].addListener(wrap());
-  //  return this;
-  //}
-  //if (nwWinEventsMap.hasOwnProperty(event)) {
-  //  this[nwWinEventsMap[event]].addListener(wrap());
-  //  return this;
-  //}
+  if (nwWinEventsMap.hasOwnProperty(event)) {
+    this[nwWinEventsMap[event]].addListener(wrap());
+    return this;
+  }
   return this;
 };
 NWWindow.prototype.removeListener = function (event, callback) {
-  if (appWinEventsMap.hasOwnProperty(event)) {
-    for (let l of this.appWindow[appWinEventsMap[event]].getListeners()) {
-      if (l.callback.listener && l.callback.listener === callback) {
-        this.appWindow[appWinEventsMap[event]].removeListener(l.callback);
-        return this;
-      }
-    }
-  }
   if (nwWinEventsMap.hasOwnProperty(event)) {
     for (let l of this[nwWinEventsMap[event]].getListeners()) {
       if (l.callback.listener && l.callback.listener === callback) {
@@ -295,7 +311,7 @@ NWWindow.prototype.removeListener = function (event, callback) {
   if (wrapEventsMapNewWin.hasOwnProperty(event)) {
     for (let l of chrome.windows[wrapEventsMapNewWin[event]].getListeners()) {
       if (l.callback.listener && l.callback.listener === callback) {
-        this[nwWrapEventsMap[event]].removeListener(l.callback);
+        chrome.windows[wrapEventsMapNewWin[event]].removeListener(l.callback);
         return this;
       }
     }
@@ -305,17 +321,11 @@ NWWindow.prototype.removeListener = function (event, callback) {
 
 NWWindow.prototype.removeAllListeners = function (event) {
   if (arguments.length === 0) {
-    var obj = Object.assign({}, appWinEventsMap, nwWinEventsMap, nwWrapEventsMap);
+    var obj = Object.assign({}, nwWinEventsMap, nwWrapEventsMap);
     var keys = Object.keys(obj);
     for (var i = 0, key; i < keys.length; ++i) {
       key = keys[i];
       this.removeAllListeners(key);
-    }
-    return this;
-  }
-  if (appWinEventsMap.hasOwnProperty(event)) {
-    for (let l of this.appWindow[appWinEventsMap[event]].getListeners()) {
-      this.appWindow[appWinEventsMap[event]].removeListener(l.callback);
     }
     return this;
   }
@@ -561,7 +571,7 @@ Object.defineProperty(NWWindow.prototype, 'title', {
     return currentNWWindowInternal.getTitleInternal();
   },
   set: function(val) {
-    currentNWWindowInternal.setTitleInternal(val);
+    currentNWWindowInternal.setTitleInternal(val, this.cWindow.id);
   }
 });
 Object.defineProperty(NWWindow.prototype, 'zoomLevel', {
@@ -652,43 +662,41 @@ nw_binding.registerCustomHook(function(bindingsAPI) {
   });
 
   apiFunctions.setHandleRequest('open', function(url, params, callback) {
-    var options = {'url': url, 'setSelfAsOpener': true};
+    var options = {'url': url, 'setSelfAsOpener': true, 'type': 'popup'};
     //FIXME: unify this conversion code with nwjs/default.js
-    //options.innerBounds = {};
-    //options.outerBounds = {};
     if (params) {
       if (params.frame === false)
         options.frameless = true;
       if (params.resizable === false)
         options.resizable = false;
-      // if (params.focus === false)
-      //   options.focused = false;
-      // if (params.x)
-      //   options.outerBounds.left = params.x;
-      // if (params.y)
-      //   options.outerBounds.top = params.y;
+      if (params.focus === false)
+        options.focused = false;
+      if (params.x)
+        options.left = params.x;
+      if (params.y)
+        options.top = params.y;
       if (params.height)
         options.height = params.height;
       if (params.width)
         options.width = params.width;
-      // if (params.min_width)
-      //   options.innerBounds.minWidth = params.min_width;
-      // if (params.max_width)
-      //   options.innerBounds.maxWidth = params.max_width;
-      // if (params.min_height)
-      //   options.innerBounds.minHeight = params.min_height;
-      // if (params.max_height)
-      //   options.innerBounds.maxHeight = params.max_height;
-      // if (params.fullscreen === true)
-      //   options.state = 'fullscreen';
+      if (params.min_width)
+        options.minWidth = params.min_width;
+      if (params.max_width)
+        options.maxWidth = params.max_width;
+      if (params.min_height)
+        options.minHeight = params.min_height;
+      if (params.max_height)
+        options.maxHeight = params.max_height;
+      if (params.fullscreen === true)
+        options.state = 'fullscreen';
       if (params.show === false)
         options.hidden = true;
-      // if (params.show_in_taskbar === false)
-      //   options.show_in_taskbar = false;
-      // if (params['always_on_top'] === true)
-      //   options.alwaysOnTop = true;
-      // if (params['visible_on_all_workspaces'] === true)
-      //   options.visibleOnAllWorkspaces = true;
+      if (params.show_in_taskbar === false)
+        options.showInTaskbar = false;
+      if (params['always_on_top'] === true)
+        options.alwaysOnTop = true;
+      if (params['visible_on_all_workspaces'] === true)
+        options.allVisible = true;
       if (typeof params['inject_js_start'] == 'string')
          options.inject_js_start = params['inject_js_start'];
       if (typeof params['inject_js_end'] == 'string')
@@ -703,8 +711,8 @@ nw_binding.registerCustomHook(function(bindingsAPI) {
       }
       // if (params.position)
       //   options.position = params.position;
-      // if (params.title)
-      //   options.title = params.title;
+      if (params.title)
+        options.title = params.title;
       // if (params.icon)
       //   options.icon = params.icon;
       //if (params.id)
