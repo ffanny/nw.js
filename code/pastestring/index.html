@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title>input paste nw test</title>
+  </head>
+  <body>
+    <h1 id='result'>input paste test</h1>
+	<input type='text' onclick='outvalue()' id='i1' name='i1' value='aaaa'>
+    <script type="text/javascript">
+	var win = nw.Window.get();
+	win.showDevTools();
+	function outvalue(){
+		v=document.getElementById('i1').value;
+		console.log(v)
+	}
+	
+    </script>
+  </body>
+</html>
+    
