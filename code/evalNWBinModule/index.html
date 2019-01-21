@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title>evalNWBInModule test</title>
+  </head>
+  <body>
+    <h1 id='e'>evalNWBinMOdule test</h1>
+    <script type="text/javascript">
+	var win = nw.Window.get();
+	win.showDevTools();
+	win.evalNWBinModule(null, 'module.bin', 'module.js');
+    </script>
+    <script type='module'>
+	import './module.js';
+	var m=new MyModule;
+	m.mylog();
+    </script>
+  </body>
+</html>
+    

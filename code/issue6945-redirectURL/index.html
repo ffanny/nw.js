@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<body>
+<h1>redirect url</h1>
+<webview src="https://www.baidu.com/"></webview>
+<script>
+var win = nw.Window.get();
+win.showDevTools();
+console.log('now');
+win.on("beforeunload", function(evt) {
+    evt.preventDefault(); // chrome doesn't support: https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
+    evt.returnValue = "close?";
+    console.log('before');
+    return false;
+});
+
+win.window.addEventListener("unload", (evt) => {
+    evt.preventDefault();
+    evt.returnValue = false;
+    console.log('unload');
+    return false;
+});
+</script>
+</body>
+</html>

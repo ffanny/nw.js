@@ -1,0 +1,13 @@
+<body>
+    <div id='result'>wait for value</div>
+    <div id='source'>f.foo source:</div>
+    <script>
+    nw.Window.get().evalNWBinModule(null, 'lib.bin', 'lib.js');
+    </script>
+    <script type="module" >
+	import {TestModule} from "./lib.js";
+	var f=new TestModule;
+	document.getElementById('result').innerHTML = 'result: ' + f.foo(10);
+	document.getElementById('source').innerHTML = "f.foo source: " + f.foo.toString();
+    </script>
+</body>
