@@ -1,0 +1,67 @@
+<html>
+<head></head>
+<body>
+<h1>chromecast test</h1>
+<button onclick='requestSession()'>cast</button>
+<!--src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"
+chrome cast: https://segmentfault.com/a/1190000006673788
+-->
+<script type="text/javascript" src="cast_sender.js"></script>
+
+<script>
+var win=nw.Window.get();
+win.showDevTools();
+function onError(error) {
+  console.log(error);
+}
+
+function onInitSuccess() {
+  console.log('API successfully initialized');
+}
+
+function initializeCastApi() {
+  const appID = chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
+  const sessionRequest = new chrome.cast.SessionRequest(appID);
+  const apiConfig = new chrome.cast.ApiConfig(sessionRequest,
+    sessionListener,
+    receiverListener);
+  chrome.cast.initialize(apiConfig, onInitSuccess, onError);
+};
+
+window['__onGCastApiAvailable'] = function(loaded, errorInfo) {
+  if (loaded) {
+    console.log('API available');
+    initializeCastApi();
+  } else {
+    console.log(errorInfo);
+  }
+}
+let receiverIsAvailable = false;
+function receiverListener(receiverAvailability) {
+  console.log(`Receiver is ${receiverAvailability}`);
+  receiverIsAvailable = (receiverAvailability === chrome.cast.ReceiverAvailability.AVAILABLE);
+}
+let currentSession = null;
+
+function sessionListener(session) {
+  currentSession = session;
+  console.log('Current session updated');
+}
+
+function onRequestSessionSuccess(session){
+  console.log(session);
+  currentSession = session;
+  console.log('Current session updated');
+}
+
+function requestSession(){
+  if(!currentSession){
+    console.log('willrequest');
+    chrome.cast.requestSession(onRequestSessionSuccess, onError);
+    console.log('requested');
+  }
+  
+}
+</script>
+</body>
+</html>

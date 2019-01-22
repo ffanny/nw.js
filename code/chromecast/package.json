@@ -1,0 +1,5 @@
+{
+	"name":"chromecast",
+	"main":"index.html",
+  	"chromium-args": "--load-extension='../nw.js/code/chromecast/pkedcjkdefgpdelpbcmbmeomcjbeemfm'"
+}

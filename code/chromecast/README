@@ -1,0 +1,2 @@
+check package.json:
+"chromium-args": "--load-extension='Relative2NW'sPATH/to/pkedcjkdefgpdelpbcmbmeomcjbeemfm'"
