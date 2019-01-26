@@ -1,0 +1,4 @@
+Firstly build the wed server by 
+run python -m SimpleHTTPServer 8080 in testdir[PATH/TO/issue6784-webviewcrash-url-load]
+
+THEN run test.py/nw app.

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>aaaaprint PDF</h1>
+<script>
+var jsonobj={"name":"","type":"","who":"","where":""}
+var jsonarr=[{"name":"","type":"","who":"","where":""}]
+var arr=[]
+nw.Window.get().showDevTools();
+nw.Window.get().getPrinters(function(r){console.log("printers:");console.log(r);console.log(jsonobj);console.log(jsonarr);console.log(arr);});
+
+function A(url) {
+console.log("inA");
+nw.Window.open(
+url,{show: false},
+function(pdfWin) {
+console.log("inAfunc");
+pdfWin.on('loaded', function() {
+this.print({printer:"\\SKY-20170614HGI\Kyocera KM-3060 KX",headerFooterEnabled:false});
+console.log("Aloaded");
+});
+console.log("Afunc");
+}
+);
+console.log("AAAA");
+}
+function B(url) {
+console.log("inB");
+nw.Window.open(
+url,{show: false},
+function(pdfWin) {
+console.log("inBfunc");
+pdfWin.on('loaded', function() {
+this.print({printer:"\\SKY-20170614HGI\ZDesigner GK888t (EPL)",headerFooterEnabled:false});
+console.log("Bloaded");
+});
+console.log("Bfunc");
+}
+);
+console.log("BBBB");
+}
+
+A("https://github.com/nwjs/nw.js");
+B("https://github.com/nwjs/nw.js/issues");
+</script>
+</body>
+</html>

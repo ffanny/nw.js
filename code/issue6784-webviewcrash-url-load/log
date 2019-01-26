@@ -1,0 +1,1641 @@
+[1548485170.263][INFO]: COMMAND InitSession {
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "chromeOptions": {
+         "args": [ "nwapp=/home/ff/issue6784-webviewcrash-url-load" ],
+         "binary": "",
+         "extensions": [  ],
+         "nwargs": [  ],
+         "windowTypes": [ "webview" ]
+      },
+      "javascriptEnabled": true,
+      "pageLoadStrategy": "none",
+      "platform": "ANY",
+      "version": ""
+   },
+   "sessionId": null
+}
+[1548485170.264][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1548485170.264][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1548485170.264][INFO]: Launching chrome: /home/ff/nwjs-sdk-v0.33.0-linux-x64/nw --disable-popup-blocking --enable-automation --ignore-certificate-errors --load-extension=/tmp/.io.nwjs.mx50QR/internal --metrics-recording-only --nwapp=/home/ff/issue6784-webviewcrash-url-load --remote-debugging-port=0 --user-data-dir=/tmp/.io.nwjs.Nk3Vcb
+
+DevTools listening on ws://127.0.0.1:41431/devtools/browser/bbd8714c-f8c1-4bc6-857e-b9cc2bcefb61
+[1548485170.566][DEBUG]: DevTools request: http://localhost:41431/json/version
+[1548485170.567][DEBUG]: DevTools response: {
+   "Browser": "Chrome/69.0.3497.81",
+   "Protocol-Version": "1.3",
+   "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36",
+   "V8-Version": "6.9.427.19",
+   "WebKit-Version": "537.36 (@032b3ca19e9af20182f9bd03deefc0faf4695558)",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/browser/bbd8714c-f8c1-4bc6-857e-b9cc2bcefb61"
+}
+
+[1548485170.567][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.568][DEBUG]: DevTools response: [  ]
+
+[1548485170.618][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.618][DEBUG]: DevTools response: [  ]
+
+[1548485170.668][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.669][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.719][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.720][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.770][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.807][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.857][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.858][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.908][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.908][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.959][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.960][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/114071B14886623C415C392CB46BBDD1",
+   "id": "114071B14886623C415C392CB46BBDD1",
+   "title": "wvurltest",
+   "type": "app",
+   "url": "http://127.0.0.1:8080/",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/114071B14886623C415C392CB46BBDD1"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.960][DEBUG]: DevTools request: http://localhost:41431/json
+[1548485170.960][DEBUG]: DevTools response: [ {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/114071B14886623C415C392CB46BBDD1",
+   "id": "114071B14886623C415C392CB46BBDD1",
+   "title": "wvurltest",
+   "type": "app",
+   "url": "http://127.0.0.1:8080/",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/114071B14886623C415C392CB46BBDD1"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "id": "069EAC4E19C942B7F52CDAF3E96CB8AF",
+   "title": "wvurltest",
+   "type": "background_page",
+   "url": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/069EAC4E19C942B7F52CDAF3E96CB8AF"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "/devtools/inspector.html?ws=localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73",
+   "id": "DD8FDA41F53019A9F368568210473A73",
+   "title": "Chrome Automation Extension",
+   "type": "background_page",
+   "url": "chrome-extension://aapnijgdinlhnhlmodcfapnahmbfebeb/_generated_background_page.html",
+   "webSocketDebuggerUrl": "ws://localhost:41431/devtools/page/DD8FDA41F53019A9F368568210473A73"
+} ]
+
+[1548485170.961][INFO]: resolved localhost to ["127.0.0.1"]
+[1548485170.961][DEBUG]: DEVTOOLS COMMAND Log.enable (id=1) {
+
+}
+[1548485170.961][DEBUG]: DEVTOOLS COMMAND DOM.getDocument (id=2) {
+
+}
+[1548485170.961][DEBUG]: DEVTOOLS COMMAND Target.setAutoAttach (id=3) {
+   "autoAttach": true,
+   "waitForDebuggerOnStart": false
+}
+[1548485170.961][DEBUG]: DEVTOOLS COMMAND Page.enable (id=4) {
+
+}
+[1548485170.993][DEBUG]: DEVTOOLS RESPONSE Log.enable (id=1) {
+
+}
+[1548485170.993][DEBUG]: DEVTOOLS RESPONSE DOM.getDocument (id=2) {
+   "root": {
+      "backendNodeId": 2,
+      "baseURL": "http://127.0.0.1:8080/",
+      "childNodeCount": 1,
+      "children": [ {
+         "attributes": [ "lang", "en" ],
+         "backendNodeId": 3,
+         "childNodeCount": 2,
+         "children": [ {
+            "attributes": [  ],
+            "backendNodeId": 4,
+            "childNodeCount": 2,
+            "localName": "head",
+            "nodeId": 3,
+            "nodeName": "HEAD",
+            "nodeType": 1,
+            "nodeValue": "",
+            "parentId": 2
+         }, {
+            "attributes": [  ],
+            "backendNodeId": 5,
+            "childNodeCount": 2,
+            "localName": "body",
+            "nodeId": 4,
+            "nodeName": "BODY",
+            "nodeType": 1,
+            "nodeValue": "",
+            "parentId": 2
+         } ],
+         "frameId": "114071B14886623C415C392CB46BBDD1",
+         "localName": "html",
+         "nodeId": 2,
+         "nodeName": "HTML",
+         "nodeType": 1,
+         "nodeValue": "",
+         "parentId": 1
+      } ],
+      "documentURL": "http://127.0.0.1:8080/",
+      "localName": "",
+      "nodeId": 1,
+      "nodeName": "#document",
+      "nodeType": 9,
+      "nodeValue": "",
+      "xmlVersion": ""
+   }
+}
+[1548485170.993][DEBUG]: DEVTOOLS RESPONSE Target.setAutoAttach (id=3) {
+
+}
+[1548485170.993][DEBUG]: DEVTOOLS RESPONSE Page.enable (id=4) {
+
+}
+[1548485170.993][DEBUG]: DEVTOOLS COMMAND Runtime.enable (id=5) {
+
+}
+[1548485171.018][DEBUG]: DEVTOOLS EVENT Runtime.executionContextCreated {
+   "context": {
+      "auxData": {
+         "frameId": "ED791F4B07911D6EA67CB00661A6FC92",
+         "isDefault": true
+      },
+      "id": 3,
+      "name": "",
+      "origin": "http://127.0.0.1:8080"
+   }
+}
+[1548485171.018][DEBUG]: DEVTOOLS EVENT Runtime.executionContextCreated {
+   "context": {
+      "auxData": {
+         "frameId": "114071B14886623C415C392CB46BBDD1",
+         "isDefault": true
+      },
+      "id": 2,
+      "name": "",
+      "origin": "chrome-extension://ophomgooipnjmjjcieopkjoebnbdfoec"
+   }
+}
+[1548485171.018][DEBUG]: DEVTOOLS RESPONSE Runtime.enable (id=5) {
+
+}
+[1548485171.018][DEBUG]: DEVTOOLS COMMAND Page.enable (id=6) {
+
+}
+[1548485171.021][DEBUG]: DEVTOOLS EVENT Runtime.executionContextDestroyed {
+   "executionContextId": 3
+}
+[1548485171.021][DEBUG]: DEVTOOLS EVENT Page.frameDetached {
+   "frameId": "ED791F4B07911D6EA67CB00661A6FC92"
+}
+[1548485171.021][DEBUG]: DEVTOOLS EVENT Log.entryAdded {
+   "entry": {
+      "level": "error",
+      "networkRequestId": "1000009756.5",
+      "source": "network",
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "timestamp": 1548485171020.56,
+      "url": "http://127.0.0.1:8080/favicon.ico"
+   }
+}
+[1548485171.021][DEBUG]: DEVTOOLS RESPONSE Page.enable (id=6) {
+
+}
+[1548485171.021][DEBUG]: DEVTOOLS COMMAND Runtime.enable (id=7) {
+
+}
+[1548485171.022][DEBUG]: DEVTOOLS RESPONSE Runtime.enable (id=7) {
+
+}
+[1548485171.022][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=8) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485171.025][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=8) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": 1
+      }
+   }
+}
+[1548485171.025][INFO]: RESPONSE InitSession {
+   "acceptInsecureCerts": false,
+   "acceptSslCerts": false,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "chromedriverVersion": "69.0.3497.81 (032b3ca19e9af20182f9bd03deefc0faf4695558)",
+      "userDataDir": "/tmp/.io.nwjs.Nk3Vcb"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "goog:chromeOptions": {
+      "debuggerAddress": "localhost:41431"
+   },
+   "handlesAlerts": true,
+   "hasTouchScreen": false,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "mobileEmulationEnabled": false,
+   "nativeEvents": true,
+   "networkConnectionEnabled": false,
+   "pageLoadStrategy": "none",
+   "platform": "Linux",
+   "rotatable": false,
+   "~~~": "..."
+}
+[1548485171.030][INFO]: COMMAND SetImplicitWait {
+   "ms": 5000.0,
+   "sessionId": "851951801cfaed0ee6f2f050de543f00"
+}
+[1548485171.030][INFO]: RESPONSE SetImplicitWait
+[9712:9712:0126/144611.175389:ERROR:bad_message.cc(25)] Terminating renderer for bad IPC message, reason 1
+[1548485172.032][INFO]: COMMAND GetUrl {
+
+}
+[1548485172.032][INFO]: Waiting for pending navigations...
+[1548485172.032][INFO]: Done waiting for pending navigations. Status: ok
+[1548485172.032][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=9) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.035][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=9) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": "http://127.0.0.1:8080/"
+      }
+   }
+}
+[1548485172.035][INFO]: Waiting for pending navigations...
+[1548485172.035][INFO]: Done waiting for pending navigations. Status: ok
+[1548485172.035][INFO]: RESPONSE GetUrl "http://127.0.0.1:8080/"
+[1548485172.036][INFO]: COMMAND FindElement {
+   "sessionId": "851951801cfaed0ee6f2f050de543f00",
+   "using": "tag name",
+   "value": "h1"
+}
+[1548485172.036][INFO]: Waiting for pending navigations...
+[1548485172.036][INFO]: Done waiting for pending navigations. Status: ok
+[1548485172.038][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=10) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.048][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=10) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.100][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=11) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.103][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=11) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.155][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=12) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.158][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=12) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.211][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=13) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.214][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=13) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.266][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=14) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.268][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=14) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.320][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=15) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.323][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=15) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.375][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=16) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.379][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=16) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.431][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=17) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.435][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=17) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.487][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=18) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.491][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=18) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.544][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=19) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.547][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=19) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.599][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=20) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.602][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=20) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.654][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=21) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.657][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=21) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.710][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=22) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.713][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=22) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.765][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=23) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.769][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=23) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.821][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=24) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.823][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=24) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.876][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=25) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.878][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=25) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.931][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=26) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.934][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=26) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485172.986][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=27) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485172.990][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=27) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.042][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=28) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.045][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=28) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.098][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=29) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.101][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=29) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.153][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=30) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.161][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=30) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.213][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=31) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.216][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=31) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.269][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=32) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.272][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=32) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.324][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=33) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.328][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=33) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.380][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=34) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.383][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=34) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.436][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=35) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.440][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=35) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.491][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=36) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.494][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=36) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.546][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=37) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.550][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=37) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.602][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=38) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.605][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=38) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.657][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=39) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.660][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=39) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.712][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=40) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.715][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=40) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.767][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=41) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.770][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=41) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.822][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=42) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.825][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=42) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.877][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=43) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.880][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=43) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.932][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=44) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.935][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=44) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485173.987][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=45) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485173.990][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=45) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.042][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=46) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.046][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=46) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.098][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=47) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.102][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=47) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.154][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=48) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.158][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=48) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.210][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=49) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.213][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=49) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.265][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=50) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.269][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=50) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.321][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=51) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.324][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=51) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.376][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=52) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.379][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=52) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.432][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=53) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.435][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=53) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.487][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=54) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.490][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=54) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.543][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=55) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.546][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=55) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.598][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=56) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.601][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=56) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.653][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=57) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.657][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=57) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.710][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=58) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.713][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=58) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.765][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=59) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.769][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=59) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.821][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=60) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.824][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=60) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.876][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=61) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.879][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=61) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.932][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=62) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.935][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=62) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485174.986][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=63) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485174.990][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=63) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.042][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=64) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.045][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=64) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.097][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=65) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.101][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=65) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.153][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=66) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.157][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=66) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.209][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=67) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.212][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=67) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.264][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=68) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.268][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=68) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.320][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=69) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.323][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=69) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.375][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=70) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.378][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=70) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.431][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=71) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.435][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=71) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.488][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=72) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.491][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=72) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.544][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=73) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.547][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=73) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.600][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=74) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.603][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=74) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.654][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=75) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.658][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=75) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.710][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=76) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.713][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=76) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.766][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=77) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.770][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=77) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.822][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=78) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.825][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=78) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.877][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=79) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.881][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=79) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.934][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=80) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.937][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=80) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485175.990][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=81) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485175.992][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=81) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.044][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=82) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.048][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=82) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.099][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=83) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.103][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=83) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.154][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=84) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.158][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=84) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.210][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=85) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.213][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=85) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.265][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=86) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.269][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=86) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.322][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=87) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.325][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=87) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.378][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=88) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.381][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=88) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.434][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=89) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.437][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=89) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.490][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=90) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.493][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=90) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.545][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=91) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.549][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=91) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.602][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=92) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.606][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=92) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.657][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=93) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.661][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=93) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.713][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=94) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.716][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=94) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.769][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=95) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.772][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=95) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.824][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=96) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.828][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=96) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.880][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=97) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.883][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=97) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.935][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=98) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.938][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=98) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485176.990][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=99) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485176.993][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=99) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485177.046][DEBUG]: DEVTOOLS COMMAND Runtime.evaluate (id=100) {
+   "expression": "(function() { // Copyright (c) 2012 The Chromium Authors. All rights reserved.\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n/**\n * Enum f...",
+   "returnByValue": true
+}
+[1548485177.050][DEBUG]: DEVTOOLS RESPONSE Runtime.evaluate (id=100) {
+   "result": {
+      "type": "object",
+      "value": {
+         "status": 0,
+         "value": null
+      }
+   }
+}
+[1548485177.050][INFO]: Waiting for pending navigations...
+[1548485177.050][INFO]: Done waiting for pending navigations. Status: ok
+[1548485177.050][INFO]: RESPONSE FindElement no such element: Unable to locate element: {"method":"tag name","selector":"h1"}
+  (Session info: chrome=69.0.3497.81)
+[1548485177.051][INFO]: COMMAND Quit {
+
+}
+[1548485177.101][INFO]: RESPONSE Quit
+[1548485177.101][DEBUG]: Log type 'driver' lost 0 entries on destruction
+[1548485177.101][DEBUG]: Log type 'browser' lost 1 entries on destruction

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>print PDF</h1>
+<script>
+nw.Window.open("a.html");
+
+nw.Window.open(
+"https://github.com/nwjs/nw.js/issues",{show: false},
+function(pdfWin) {
+pdfWin.on('loaded', function() {
+this.print({"printer":"xxxxxx","headerFooterEnabled":false,"marginsType":3,"marginsCustom":{"marginBottom":54,"marginLeft":50,"marginRight":28,"marginTop":30}});
+});
+}
+);
+
+</script>
+</body>
+</html>

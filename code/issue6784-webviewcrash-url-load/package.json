@@ -1,0 +1,7 @@
+{
+  "name": "wvurltest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http://127.0.0.1:8080",
+  "node-remote": "<all_urls>"
+}
