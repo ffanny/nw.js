@@ -1,13 +1,8 @@
 import time
 import os
-import urlparse, urllib
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from nw_util import *
-
-def path2url(path):
-        return urlparse.urljoin(
-                  'file:', urllib.pathname2url(path))
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
