@@ -1,0 +1,20 @@
+<body>
+<h1>showintaskbar test</h1>
+<button onclick="openwin()">open win to test show</button>
+<button onclick="openwinhide()">open win to test hide</button>
+<button onclick="sethide()">set hide</button>
+<script>
+ function openwin(){
+	nw.Window.open('index.html',{show_in_taskbar:true});
+ }
+
+ function openwinhide(){
+	nw.Window.open('index.html',{show_in_taskbar:false});
+ }
+
+ function sethide(){
+	nw.Window.get().setShowInTaskbar(false);
+	console.log("sethide clicked");
+ }
+</script>
+</body>
