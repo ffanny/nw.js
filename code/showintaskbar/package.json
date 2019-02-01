@@ -1,7 +1,4 @@
 {
 	"name":"show in taskbar",
-	"main":"index.js",
-	"window": {
-	  "show_in_taskbar": false
-	}
+	"main":"index.js"
 }
