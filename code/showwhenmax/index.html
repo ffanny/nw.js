@@ -1,0 +1,26 @@
+<body>
+<script>
+  var gui = nw;
+  var win;
+  gui.Window.open('popup.html', {
+    x: 100, y: 100, width: 200, height: 300
+  }, function(w) { win = w; });
+
+  win.on('maximize', function() {
+    console.log('popup window is maxed.');
+  });
+  win.on('hide', function() {
+    console.log('popup window is hided.');
+  });  
+  win.on('show', function() {
+    console.log('popup window is showing.');
+  }); 
+</script>
+
+<button onclick="win.show()">Show</button>
+<br/>
+<button onclick="win.hide()">Hide</button>
+<br/>
+<button onclick="win.maximize()">Maximize</button>
+<br/>
+</body>
