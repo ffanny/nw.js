@@ -1,0 +1,6 @@
+{
+  "name":"virtual keyboard input test",
+  "main":"index.html",
+  "chromium-args" : "--enable-features='nw2'",
+  "dependencies":{}
+}

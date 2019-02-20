@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title>input paste nw test</title>
+  </head>
+  <body>
+    <h1 id='e'>virtual keyboard input test</h1>
+	<input type='text' id='i1' name='i1' autofocus value='aaaa'>
+	<input type='text' onclick='outvalue2()' id='i2' name='i2' value='鑫鑫鑫鑫'>
+    <script type="text/javascript">
+	var win = nw.Window.get();
+	win.showDevTools();
+
+	function outvalue2(){
+		v2=document.getElementById('i2').value;
+		console.log(v2)
+	}
+    </script>
+  </body>
+</html>
+    
