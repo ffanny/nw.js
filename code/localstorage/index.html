@@ -1,0 +1,21 @@
+<body>
+<h1>localstorage extension test</h1>
+<script>
+var storage=window.localStorage;
+storage.a=1;
+storage["b"]=2;
+storage.setItem("c",3);
+var aa=storage.a;
+var bb=storage["b"];
+var cc=storage.getItem("c");
+    console.log(typeof storage["a"]);
+    console.log(typeof storage["b"]);
+    console.log(typeof storage["c"]);
+    console.log(aa);
+    console.log(bb);
+    console.log(cc);
+console.log(storage);
+storage.clear();
+console.log(storage);
+</script>
+</body>

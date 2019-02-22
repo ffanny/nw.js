@@ -1,0 +1,5 @@
+{
+	"name":"localstorage in extension test",
+	"main":"index.html",
+  	"chromium-args": "--load-extension='../nw.js/code/localstorage/pkedcjkdefgpdelpbcmbmeomcjbeemfm'"
+}
