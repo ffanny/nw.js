@@ -1,7 +1,0 @@
-{
- "main":"index.html",
- "name":"shape detection",
-"chromium-args":"--enable-experimental-web-platform-features",
-"chromium-args":"--enable-experimental-extension-apis",
-"chromium-args":"--enable-blink-features=ShapeDetection"
-}
