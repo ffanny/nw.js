@@ -4,7 +4,9 @@ https://github.com/WICG/shape-detection-api
 https://wicg.github.io/shape-detection-api/
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
+
 https://developers.google.com/web/updates/2018/06/feature-policy
 
 https://developers.google.com/web/updates/2019/01/shape-detection
