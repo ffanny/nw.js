@@ -1,0 +1,19 @@
+<body>
+<h1>main</h1>
+<a href="http://docs.nwjs.io/en/latest/References/Window/#event-new-win-policy-frame-url-policy" >new win policy</a>
+</body>
+<script>
+nw.Window.get().on('new-win-policy', function(frame, url, policy) {
+  // do not open the window
+console.log('not firing')
+  policy.ignore();
+  // and open it in external browser
+  go(url);
+});/*
+var win=nw.Window.get();
+win.on("new-win-policy",(frame, url, policy)=>{
+console.log('not firing')
+policy.ignore();
+go(url);
+})*/
+</script>
