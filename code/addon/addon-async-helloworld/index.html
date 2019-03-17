@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>index.html</title>
+</head>
+<body>
+<h1>addon page</h1>
+<script>
+console.log('at begin');
+const common = require('../common');
+const assert = require('assert');
+const { runCall } = require(`./build/${common.buildType}/binding`);
+
+runCall(5, common.mustCall(function(err, val) {
+  assert.strictEqual(err, null);
+  assert.strictEqual(val, 10);
+  process.nextTick(common.mustCall());
+  console.log('in runcall.');
+}));
+console.log('at end?');
+
+</script>
+</body>
+<html>
