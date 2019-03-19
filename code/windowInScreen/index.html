@@ -1,12 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head></head>
 <body>
-<h1>main</h1>
+<h1>test fullscreen</h1>
+
 <script>
-nw.Window.open('https://google.co.uk', {
-    position: 'center',
-    width: screen.availWidth,
-    height: screen.availHeight,
-    frame: false,
-});
-nw.App.crashBrowser();
+//nw.Window.open('https://get.webgl.org/');
+//nw.App.crashBrowser();
+//  "chromium-args":"--enable-webgl --ignore-gpu-blacklist --allow-file-access-from-files"
+var win=nw.Window.get();
+console.log('win.isFullscreen?:'+win.isFullscreen);
+function esc(){
+	//var win=nw.Window.get();
+	win.leaveFullscreen();
+	console.log('do win.leaveFullscreen()');	
+	//console.log('win.isFullscreen?:'+win.isFullscreen);
+    //checkfull();	
+}
+function checkfull(){
+	//var win=nw.Window.get();
+	console.log('click check-win.isFullscreen?:'+win.isFullscreen);	
+}
 </script>
+<button onclick='esc()'>win.leaveFullscreen</button>
+<button onclick='win.enterFullscreen()'>win.enterFullscreen()</button>
+<button onclick='win.toggleFullscreen()'>win.toggleFullscreen()</button>
+<button onclick='checkfull()'>check:win.isFullscreen</button>
 </body>
+</html>

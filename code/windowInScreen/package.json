@@ -1,4 +1,16 @@
 {
   "name": "windowScreen",
-  "main": "index.html"
-}
+  "main": "index.html",
+  "window":{
+   "title": "My App",
+    "frame": false,
+    "width": 400,
+    "height": 400,
+    
+    "fullscreen": true,
+    "toolbar": false
+	},
+  "chromium-args": "--in-process-gpu  --disable-transparency"
+
+
+  }
