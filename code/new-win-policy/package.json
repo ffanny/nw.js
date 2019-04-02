@@ -1,4 +1,4 @@
 {
- "main":"index.html","name":"new win policy"
+ "main":"index.html","name":"new win policy","window":{"height":500,"width":800}
 
 }

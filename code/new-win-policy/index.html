@@ -1,14 +1,16 @@
 <body>
 <h1>main</h1>
-<a href="http://docs.nwjs.io/en/latest/References/Window/#event-new-win-policy-frame-url-policy" >new win policy</a>
+<!--<a target='_blank' href="https://www.kayak.com" >new win policy</a>-->
+<iframe src="https://www.kayak.com" height='400' width='700' ></iframe>
 </body>
 <script>
 nw.Window.get().on('new-win-policy', function(frame, url, policy) {
   // do not open the window
-console.log('not firing')
-  policy.ignore();
+console.log(' firing')
+  //policy.forceNewWindow();
+policy.ignore();
   // and open it in external browser
-  go(url);
+  //go(url);
 });/*
 var win=nw.Window.get();
 win.on("new-win-policy",(frame, url, policy)=>{
