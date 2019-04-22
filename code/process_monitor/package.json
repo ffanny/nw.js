@@ -1,0 +1,8 @@
+{
+  "name": "Process Monitor",
+  "main":"popup.html",
+  "description": "Adds a browser action that monitors resource usage of all browser processes.",
+  "permissions": [
+    "processes"
+  ]
+}
